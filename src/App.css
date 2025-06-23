@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.curve-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.curve {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
