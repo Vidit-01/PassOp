@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -8,30 +8,16 @@ const Login = () => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = async (data) => {
-    try {
-    const response = await fetch('http://localhost:5000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-
-    const result = await response.json();
-    console.log(result);
-
-  } catch (err) {
-    console.error("Login error:", err);
-  }
-  }
+  const onSubmit = (data) => console.log(data)
+  
+  console.log(watch("example"))
   return (
     <div className="w-full ">
       <div className="text-green-500 flex justify-center heading text-2xl font-sans font-bold md:text-4xl text-center">
         Protect Your Passwords
       </div>
       <div className=" flex justify-center heading text-4xl font-sans font-bold">
-        Login
+        Register
       </div>
       <div className="flex justify-center my-20">
         <div className="mt-2 flex">
@@ -52,4 +38,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
