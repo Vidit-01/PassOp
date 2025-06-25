@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import mongoose from 'mongoose';
 import User from './models/User.js';
 import bcrypt from 'bcrypt';
+import Creds from './models/Creds.js'
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -73,7 +74,23 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
+app.post('/add-credential', async (req, res) => {
+  const { userId, website, username, password } = req.body;
 
+  try {
+    const credential = new Creds({
+      userId,
+      website,
+      username,
+      password
+    });
+
+    await credential.save();
+    res.status(201).json({ message: "Credential saved securely" });
+  } catch (err) {
+    res.status(500).json({ message: "Error saving credential", error: err.message });
+  }
+});
 app.get("/",(req,res)=>{
   res.status(200).json("Yooo")
 })
