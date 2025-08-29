@@ -1,12 +1,20 @@
-# React + Vite
+Certainly! Here's a comprehensive README for your PassOp project:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# PassOp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+PassOp is a secure and efficient password manager built using the MERN (MongoDB, Express, React, Node.js) stack. It allows users to store, manage, and retrieve their passwords with ease, ensuring data security and user privacy.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Features
+
+* **User Authentication**: Secure login and registration system with JWT-based authentication.
+* **Password Storage**: Store passwords securely with encryption.
+* **Password Retrieval**: Easily retrieve stored passwords with a user-friendly interface.
+* **Responsive Design**: Optimized for both desktop and mobile devices.
+* **Modern Tech Stack**: Built with React, Node.js, Express, and MongoDB.
+
+---
+
