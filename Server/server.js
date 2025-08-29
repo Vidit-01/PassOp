@@ -46,7 +46,7 @@ app.post('/register', async (req, res) => {
 
   } catch (error) {
     console.error("Registration error:", error);
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong" ,userId : User._id});
   }
 });
 
@@ -67,14 +67,17 @@ app.post('/login', async (req, res) => {
     }
 
     // Successful login
-    res.status(200).json({ message: 'Login successful' });
+    res.status(200).json({ message: 'Login successful' ,userId:user._id});
 
   } catch (err) {
     console.error('Login error:', err);
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
-app.post('/add-credential', async (req, res) => {
+
+
+app.post('/add', async (req, res) => {
+  console.log(req.body)
   const { userId, website, username, password } = req.body;
 
   try {
@@ -94,6 +97,21 @@ app.post('/add-credential', async (req, res) => {
 app.get("/",(req,res)=>{
   res.status(200).json("Yooo")
 })
+
+app.get('/pass/:userId', async (req, res) => {
+  const credentials = await Creds.find({ userId: req.params.userId });
+
+  const decrypted = credentials.map(cred => {
+    return {
+      website: cred.website,
+      username: cred.username,
+      password: cred.password
+    };
+  });
+
+  res.json(decrypted);
+});
+
 
 app.listen(5000, () => {
   console.log('Server running on port 5000');

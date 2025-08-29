@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Table = () => {
+const Table = (params) => {
     return (
         <>
 
@@ -14,6 +14,8 @@ const Table = () => {
                                 <th className='py-2'>Password</th>
                             </tr>
                         </thead>
+                    
+                    
                         <tbody className='bg-green-100'>
                             <tr>
                                 <td className='py-1'>The Sliding Mr. Bones (Next Stop, Pottersville)</td>

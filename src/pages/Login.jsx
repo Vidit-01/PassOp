@@ -1,6 +1,8 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -19,7 +21,11 @@ const Login = () => {
     });
 
     const result = await response.json();
-    console.log(result);
+    alert(result.message);
+    if (response.status==200){
+      localStorage.setItem('userId',result.userId)
+      navigate('/')
+    }
 
   } catch (err) {
     console.error("Login error:", err);
